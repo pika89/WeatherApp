@@ -1,0 +1,15 @@
+<section>
+  <h1>Search for a city</h1>
+  <mat-form-field class="example-full-width">
+    <input #searchBox matInput placeholder="Search a city" (input)="searchCity(searchBox.value)">
+    <!-- <button (click)="searchCity(query)">Search</button> -->
+  </mat-form-field>
+  <ul class="search-result">
+    <li *ngFor="let city of city$ | async">
+      <!--  ispod na link -->
+      <a routerLink="/search/{{city.title}}/{{city.woeid}}">
+        {{city.title}}
+      </a>
+    </li>
+  </ul>
+</section>
