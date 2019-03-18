@@ -9,19 +9,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CityComponent } from './city/city.component';
 import {
-  MatCardModule,
+  MatCardModule, MatIconModule, MatTooltipModule
 } from '@angular/material';
+import { AngularWeatherAppComponent } from './angular-weather-app/angular-weather-app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchCityComponent,
-    CityComponent
+    CityComponent,
+    AngularWeatherAppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     MatCardModule,
+  MatCardModule, MatIconModule, MatTooltipModule
+,
+    MatIconModule,
     HttpClientModule,
     MatInputModule,
     BrowserAnimationsModule,

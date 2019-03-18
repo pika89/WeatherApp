@@ -1,19 +1,19 @@
-<mat-card class="example-card">
+<app-angular-weather-app></app-angular-weather-app>
+<section>
+  <div id=wrap-header>
+      <i class="material-icons" routerLink="/" *ngIf="cityInfo.length !== 0">
+        arrow_back_ios
+      </i>
+    <h1>{{city.title}}</h1>
+  </div>
+  <mat-card *ngFor="let cityInfo of cityInfo | slice:0:4" class="example-card">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{contact?.title}}</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <p mat-raised-button matTooltip="{{cityInfo?.the_temp * 1.8 + 32 | number:'1.0-0'}}&#8457;" id="temp">
+        {{ cityInfo?.the_temp | number:'1.0-0'}}&#8451;</p>
+      <img mat-card-avatar class="example-header-image"
+        src="https://www.metaweather.com/static/img/weather/png/64/{{cityInfo?.weather_state_abbr}}.png">
+      <mat-card-title>{{cityInfo?.applicable_date | date}}</mat-card-title>
+      <mat-card-subtitle>{{cityInfo?.weather_state_name}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
   </mat-card>
+</section>
